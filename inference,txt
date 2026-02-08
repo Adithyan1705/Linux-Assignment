@@ -1,0 +1,144 @@
+# Create a directory called EV4
+mkdir ev4
+# Resultant directory: /home/adithyan/ev4
+
+# Navigate into the EV4 directory
+cd ev4
+# Resultant directory: /home/adithyan/ev4
+
+# Create a directory with roll number 3
+mkdir 3
+# Resultant directory: /home/adithyan/ev4
+
+# Navigate into roll number directory
+cd 3
+# Resultant directory: /home/adithyan/ev4/3
+
+# Switch to previous directory
+cd -
+# Resultant directory: /home/adithyan/ev4
+
+# Switch back
+cd -
+# Resultant directory: /home/adithyan/ev4/3
+
+# Stay in current directory
+cd .
+# Resultant directory: /home/adithyan/ev4/3
+
+# Move to parent directory
+cd ..
+# Resultant directory: /home/adithyan/ev4
+
+# Go to home directory
+cd ~
+# Resultant directory: /home/adithyan
+
+# Go to root directory
+cd /
+# Resultant directory: /
+
+# List files in long format
+ls -l
+# Resultant directory: /
+
+# Enter media directory
+cd media
+# Resultant directory: /media
+
+# Go back to home
+cd
+# Resultant directory: /home/adithyan
+
+# Print working directory
+pwd
+# Resultant directory: /home/adithyan
+
+# Try entering media (not present here)
+cd media
+# Resultant directory: error
+
+# Go to media from root
+cd /media
+# Resultant directory: /media
+
+# List files
+ls -l
+ls -al
+# Resultant directory: /media
+
+# Go to roll number directory
+cd ~/ev4/3
+# Resultant directory: /home/adithyan/ev4/3
+
+# Create directories
+mkdir emptydummy
+mkdir dummy
+
+# Enter dummy directory
+cd dummy
+# Resultant directory: /home/adithyan/ev4/3/dummy
+
+# Create files
+touch file1
+touch file2
+ls -l
+
+# Remove file2 with confirmation
+rm -i file2
+ls -l
+
+# Go back
+cd ..
+# Resultant directory: /home/adithyan/ev4/3
+
+# Remove empty directory
+rm emptydummy
+rmdir emptydummy
+
+# Try removing non-empty directory
+rmdir dummy
+rm -r dummy
+
+# Create text files
+cat > file1.txt
+My first line
+^D
+
+cat > file2.txt
+Hello Second line
+^D
+
+cat > file3.txt
+Hello line
+^D
+
+# Combine files
+cat file1.txt file2.txt > file_combined.txt
+cat file3.txt >> file_combined.txt
+cat file_combined.txt
+
+# Search for hello
+grep -i hello file*
+
+# Copy file
+cp file1.txt ~/ev4
+
+# Rename file
+mv file_combined.txt combined
+ls -l combined
+
+# Change permissions
+chmod u+x combined
+chmod g-r combined
+chmod 777 combined
+
+# User management
+sudo useradd alice
+sudo passwd alice
+sudo userdel alice
+
+# Messaging
+write alice
+mesg y
+mesg n
